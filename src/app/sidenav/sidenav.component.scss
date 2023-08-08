@@ -1,0 +1,68 @@
+#SideNav {
+    .mat-tree {
+      .mat-tree-node {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+  
+      .menuItem {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+  
+        button {
+          height: 32px;
+          width: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 8px;
+          border-radius: 50%;
+  
+          .mat-icon {
+            font-size: 18px;
+          }
+        }
+  
+        span {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  
+    .expanded {
+      .mat-tree-node {
+        padding-left: 16px;
+      }
+    }
+  
+    .normal {
+      .mat-tree-node {
+        padding-left: 80px;
+      }
+    }
+  
+    .selected {
+      background-color: #f1f1f1;
+      border-radius: 4px;
+  
+      button {
+        background-color: #ff7000;
+        color: white;
+      }
+    }
+  
+    .not-selected {
+      button {
+        background-color: transparent;
+        color: white;
+      }
+    }
+  
+    .expandTree {
+      transform: rotate(90deg);
+    }
+  }
+  

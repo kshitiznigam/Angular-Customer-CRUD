@@ -1,0 +1,66 @@
+<!-- Sidebar Component -->
+<app-sidenav></app-sidenav>
+
+<!-- Main Content Area -->
+<div class="main-container">
+  <div class="table-container flex-grow-1">
+    <div class="button-container d-flex gap-2">
+      <button mat-raised-button color="primary" class="add-button" (click)="onAddCustomerClick()">Add Customer</button>
+      <button mat-raised-button color="warn" class="delete-button" (click)="onDeleteSelectedCustomers()">Delete</button>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover">
+
+      <!-- Customer ID Column -->
+      <ng-container matColumnDef="customerId">
+        <th mat-header-cell *matHeaderCellDef> Customer ID </th>
+        <td mat-cell *matCellDef="let customer"> {{customer.customerId}} </td>
+      </ng-container>
+
+      <!-- Customer Name Column -->
+      <ng-container matColumnDef="customerName">
+        <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+        <td mat-cell *matCellDef="let customer"> {{customer.customerName}} </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let customer"> {{customer.email}} </td>
+      </ng-container>
+
+      <!-- Contact No Column -->
+      <ng-container matColumnDef="contactNo">
+        <th mat-header-cell *matHeaderCellDef> Contact No </th>
+        <td mat-cell *matCellDef="let customer"> {{customer.contactNo}} </td>
+      </ng-container>
+
+      <!-- Last Order Date Column -->
+      <ng-container matColumnDef="lastOrderDate">
+        <th mat-header-cell *matHeaderCellDef> Last Order Date </th>
+        <td mat-cell *matCellDef="let customer"> {{customer.lastOrderDate | date: 'yyyy-MM-dd'}} </td>
+      </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let customer">
+          <button mat-icon-button color="primary" (click)="onEditCustomerClick(customer)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Delete Checkbox Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let customer">
+          <mat-checkbox (click)="$event.stopPropagation()" (change)="toggleCustomerSelection(customer)"></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Table header and row definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

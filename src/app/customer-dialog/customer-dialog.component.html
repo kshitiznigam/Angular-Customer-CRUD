@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Edit Customer' : 'Add Customer' }}</h2>
+<div mat-dialog-content fxLayout="column" fxLayoutGap="10px">
+  <form [formGroup]="customerForm" *ngIf="customerForm" fxLayout="column">
+    <mat-form-field>
+      <mat-label>Customer Name</mat-label>
+      <input matInput formControlName="customerName" required placeholder="Enter Your Name">
+      <!-- Display the required validation message -->
+      <mat-error *ngIf="customerForm.get('customerName')?.invalid && (customerForm.get('customerName')?.dirty || customerForm.get('customerName')?.touched)">
+        Customer Name is required
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" required placeholder="Email">
+      <!-- Display the required and email validation messages -->
+      <mat-error *ngIf="customerForm.get('email')?.invalid && (customerForm.get('email')?.dirty || customerForm.get('email')?.touched)">
+        <span *ngIf="customerForm.get('email')?.errors?.['required']">Email is required</span>
+        <span *ngIf="customerForm.get('email')?.errors?.['email']">Enter a valid email</span>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Contact No</mat-label>
+      <input matInput formControlName="contactNo" required placeholder="Number">
+      <!-- Display the required and minLength validation messages -->
+      <mat-error *ngIf="customerForm.get('contactNo')?.invalid && customerForm.get('contactNo')?.touched">
+        <span *ngIf="customerForm.get('contactNo')?.errors?.['required']">Contact No is required</span>
+        <span *ngIf="customerForm.get('contactNo')?.errors?.['minlength']">Contact No must be at least 10 digits</span>
+        <span *ngIf="customerForm.get('contactNo')?.errors?.['maxlength']">Contact No must not exceed 10 digits</span>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Last Order Date</mat-label>
+      <input matInput type="date" formControlName="lastOrderDate" required>
+      <!-- Display the required validation message -->
+      <mat-error *ngIf="customerForm.get('lastOrderDate')?.invalid && (customerForm.get('lastOrderDate')?.dirty || customerForm.get('lastOrderDate')?.touched)">
+        Last Order Date is required
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions fxLayoutGap="10px">
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button color="primary" [disabled]="!customerForm.valid" (click)="onFormSubmit()">
+    {{ isEditMode ? 'Save Changes' : 'Add' }}
+  </button>
+</div>

@@ -1,0 +1,67 @@
+/* Add styles for the table */
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  /* Style the table header */
+  .mat-header-row {
+    background-color: #f57c00; /* Orange color */
+    color: white;
+    font-weight: bold;
+  }
+
+  .mat-cell,
+  .mat-header-cell {
+    padding: 8px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+
+    /* Style the edit and delete buttons */
+    .mat-icon-button {
+      color: #f57c00;
+    }
+  }
+
+  /* Style the checkboxes */
+  .mat-checkbox {
+    margin-right: 8px;
+  }
+
+  /* Style the rows on hover */
+  .mat-row:hover {
+    background-color: #fafafa;
+  }
+}
+
+/* Style the Add and Delete buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  /* Style the Add button */
+  .add-button {
+    background-color: #f57c00;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Style the Delete button */
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+/* Adjust the position of the table */
+.table-container {
+  margin-top: 16px;
+  margin-left: 80px; /* Adjust the left margin to align with the sidenav bar */
+}
+
+/* Add a bit of padding to the main content area */
+.main-content {
+  padding: 16px;
+}

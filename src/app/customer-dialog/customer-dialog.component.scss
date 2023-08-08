@@ -1,0 +1,58 @@
+/* Add any global styles you need here */
+
+/* Styling for the customer form */
+mat-form-field {
+    width: 100%;
+  }
+  
+  /* Adjust spacing between elements */
+  mat-form-field,
+  button {
+    margin-bottom: 10px;
+  }
+  
+  /* Center the dialog actions */
+  .mat-dialog-actions {
+    justify-content: flex-end;
+  }
+  
+  /* Apply some basic styling to the form inputs */
+  input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Apply some basic styling to the buttons */
+  button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  
+  /* Style the Save Changes button with a different background color */
+  button[color="primary"] {
+    background-color: #1976d2;
+    color: white;
+  }
+  
+  /* Apply some basic styling to the error messages */
+  .mat-error {
+    color: red;
+  }
+  
+  /* Apply some basic styling to the dialog title */
+  h2.mat-dialog-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+  
+  /* Add spacing between dialog content and actions */
+  .mat-dialog-content,
+  .mat-dialog-actions {
+    padding: 16px;
+  }
+  

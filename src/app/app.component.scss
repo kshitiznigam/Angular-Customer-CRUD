@@ -1,0 +1,47 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Main container styles */
+  .example-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidenav styles */
+  .mat-drawer {
+    background-color: #ff9800; /* Orange color for sidenav */
+    color: white;
+    width: 55px;
+  }
+  
+  /* Expanded sidenav styles */
+  .expanded .mat-drawer {
+    width: 175px;
+  }
+  
+  /* Sidenav content styles */
+  .mat-drawer-content {
+    padding: 16px;
+    width: 100%;
+    overflow: auto;
+    background-color: white; /* White background for main content area */
+  }
+  
+  /* Navbar styles */
+  mat-toolbar {
+    background-color: #1976d2;
+    color: white;
+  }
+  
+  /* Main content area styles */
+  .content {
+    padding: 16px;
+    flex-grow: 1;
+  }
+  
+  /* Any additional styles for the app component can be added here */
+  
