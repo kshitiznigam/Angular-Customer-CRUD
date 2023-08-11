@@ -1,13 +1,72 @@
-<!-- Sidebar Component -->
-<app-sidenav></app-sidenav>
 
+
+
+
+<!-- Include the Toolbar Component -->
+<app-toolbar></app-toolbar>
+<!-- <app-sidenav></app-sidenav> -->
 <!-- Main Content Area -->
 <div class="main-container">
+  <div class="toolbar-space"></div>
+  <!-- <div class="card-container">
+    <mat-card class="card users-card">
+      <mat-card-content>
+        <h2>{{ totalUsers }}</h2>
+        <h2>Users</h2>
+        </mat-card-content>
+    </mat-card>
+    
+   
+    <mat-card class="card roles-card">
+      <mat-card-content>
+        <h2>{{ totalRoles }}</h2>
+        <h2>Roles</h2>
+      </mat-card-content>
+    </mat-card>
+  </div> -->
+
+
+  <!-- Add Customer and Delete Buttons -->
+<div class="button-container">
+
+  
+  <div class="search-box"> 
+    <mat-icon class="search-icon">search</mat-icon>
+    <input matInput placeholder="Search..." />
+  </div>
+  <button mat-raised-button color="primary" class="add-button" (click)="onAddCustomerClick()">
+    <mat-icon class="button-icon">add</mat-icon>
+    Add Customer
+  </button>
+  
+  <button mat-raised-button color="primary" class="template-button">
+    <mat-icon class="button-icon">get_app</mat-icon>
+    Template
+  </button>
+  
+  <button mat-raised-button color="primary" class="upload-button">
+    <mat-icon class="button-icon">cloud_upload</mat-icon>
+    Upload
+  </button>
+  
+  <button mat-raised-button color="primary" class="update-button">
+    <mat-icon class="button-icon">update</mat-icon>
+    Update
+  </button>
+  
+  <button mat-raised-button color="primary" class="save-button">
+    <mat-icon class="button-icon">save</mat-icon>
+    Save
+  </button>
+  
+  <button mat-raised-button color="warn" class="delete-button" (click)="onDeleteSelectedCustomers()">
+    <mat-icon class="button-icon">delete</mat-icon>
+    Delete
+  </button>
+</div>
+
+
   <div class="table-container flex-grow-1">
-    <div class="button-container d-flex gap-2">
-      <button mat-raised-button color="primary" class="add-button" (click)="onAddCustomerClick()">Add Customer</button>
-      <button mat-raised-button color="warn" class="delete-button" (click)="onDeleteSelectedCustomers()">Delete</button>
-    </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover">
 
       <!-- Customer ID Column -->

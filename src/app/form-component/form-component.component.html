@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name">
+      <div *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched" class="error-message">
+        Name is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched" class="error-message">
+        Please enter a valid email address.
+      </div>
+    </div>
+  
+    <div>
+      <label for="contactNo">Contact Number:</label>
+      <input type="text" id="contactNo" formControlName="contactNo">
+      <div *ngIf="formGroup.get('contactNo')?.invalid && formGroup.get('contactNo')?.touched" class="error-message">
+        Please enter a valid contact number.
+      </div>
+    </div>
+  
+    <div>
+      <label for="lastOrderDate">Last Order Date:</label>
+      <input type="date" id="lastOrderDate" formControlName="lastOrderDate">
+    </div>
+  
+    <button type="submit" [disabled]="!formGroup.valid">Submit</button>
+  </form>
+  

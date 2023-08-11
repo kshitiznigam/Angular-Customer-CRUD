@@ -1,72 +1,42 @@
 import { Component } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { FlatTreeControl } from '@angular/cdk/tree';
 
-interface TreeNode {
+interface SidenavItem {
   name: string;
   icon: string;
-  children?: TreeNode[];
-}
-
-interface FlatNode {
-  expandable: boolean;
-  name: string;
-  icon: string;
-  level: number;
+  link?: string;
 }
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
+  
 })
 export class AppComponent {
-  dataSource: MatTreeFlatDataSource<TreeNode, FlatNode>;
-  treeControl: FlatTreeControl<FlatNode>;
+isExpanded: boolean=false;
+  title: any;
+onMouseEnter() {
+throw new Error('Method not implemented.');
+}
+onMouseLeave() {
+throw new Error('Method not implemented.');
+}
   isOpened: boolean = false;
 
-  
-  // Sample data for demonstration
-  treeData: TreeNode[] = [
+  sidenavItems: SidenavItem[] = [
     {
-      name: 'Node 1',
-      icon: 'home',
-      children: [
-        { name: 'Child 1', icon: 'child_care' },
-        { name: 'Child 2', icon: 'child_care' }
-      ]
+      name: 'Customer',
+      icon: 'person',
+      link: '/customer'
     },
+    
     {
-      name: 'Node 2',
-      icon: 'work',
-      children: [
-        { name: 'Child 3', icon: 'child_care' },
-        { name: 'Child 4', icon: 'child_care' }
-      ]
-    }
-    // Add more nodes as needed
+      name: 'Form',
+      icon: 'description',
+      link: '/form-component'
+    },
+    
+    
   ];
-
-  constructor() {
-    this.treeControl = new FlatTreeControl<FlatNode>(
-      node => node.level,
-      node => node.expandable
-    );
-
-    const treeFlattener = new MatTreeFlattener<TreeNode, FlatNode>(
-      (node: TreeNode, level: number) => ({
-        expandable: !!node.children && node.children.length > 0,
-        name: node.name,
-        icon: node.icon,
-        level: level
-      }),
-      node => node.level,
-      node => node.expandable,
-      node => node.children
-    );
-
-    this.dataSource = new MatTreeFlatDataSource(this.treeControl, treeFlattener);
-    this.dataSource.data = this.treeData;
-  }
 }

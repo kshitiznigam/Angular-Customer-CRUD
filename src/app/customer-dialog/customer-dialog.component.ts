@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'; // Import FormControl
-
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Customer } from '../customer/customer.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customer-dialog',
@@ -12,11 +13,12 @@ import { Customer } from '../customer/customer.component';
 export class CustomerDialogComponent implements OnInit {
   customerForm!: FormGroup;
   isEditMode = false;
-
+  
   constructor(
     public dialogRef: MatDialogRef<CustomerDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Customer,
-    private fb: FormBuilder
+    private fb: FormBuilder, private snackBar: MatSnackBar,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +45,18 @@ export class CustomerDialogComponent implements OnInit {
       const customerData: Customer = this.customerForm.value;
       console.log(customerData);
       this.dialogRef.close(customerData);
+      this.snackBar.open('Customer data saved successfully!', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom'
+      });
+    } else {
+      // Show an error message if the form is invalid
+      this.snackBar.open('Please fill in all required fields correctly!', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom'
+      });
     }
   }
 }

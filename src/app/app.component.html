@@ -1,15 +1,14 @@
-<mat-drawer-container class="example-container" autosize hasBackdrop="false">
-    <mat-drawer #drawer mode="over" disableClose="true" [ngStyle]="isOpened ? {'width':'175px'} : {'width':'55px'}"
-        opened class="drawer" (mouseenter)="isOpened=true" (mouseleave)="isOpened=false">
-      <app-sidenav [dataSource]="dataSource" [treeControl]="treeControl" [isOpened]="isOpened"></app-sidenav>>
-    </mat-drawer>
-    <mat-drawer-content>
-      <app-sidenav [drawer]="drawer"></app-sidenav>
-      <div class="content">
-        <router-outlet></router-outlet>
-        <app-customer></app-customer>
-      </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
+<mat-drawer-container class="example-container" autosize hasBackdrop="true">
   
+  <mat-drawer >
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
 
+
+<!-- opened class="drawer" (mouseenter)="isOpened=false" (mouseleave)="isOpened=false" -->

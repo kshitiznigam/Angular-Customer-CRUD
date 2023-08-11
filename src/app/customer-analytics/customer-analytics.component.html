@@ -1,0 +1,11 @@
+<div class="chart-container">
+  <div class="pie-chart">
+    <apx-chart [series]="pieChartSeries" [chart]="pieChartOptions.chart" [fill]="pieChartOptions.fill"
+      [title]="pieChartOptions.title" [legend]="pieChartOptions.legend" [dataLabels]="pieChartOptions.dataLabels"></apx-chart>
+  </div>
+  <div class="bar-chart">
+    <apx-chart [series]="[{data:barChartSeries}]" [chart]="barChartOptions.chart" [fill]="barChartOptions.fill"
+      [title]="barChartOptions.title" [xaxis]="barChartOptions.xaxis" [yaxis]="barChartOptions.yaxis"
+      [legend]="barChartOptions.legend" [dataLabels]="barChartOptions.dataLabels"></apx-chart>
+  </div>
+</div>

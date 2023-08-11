@@ -1,55 +1,43 @@
-
-import { MatDrawer } from '@angular/material/sidenav';
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
-import { MatTreeFlatDataSource } from '@angular/material/tree';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import { Router } from '@angular/router'; // Import Router from @angular/router
-
-interface TreeNode {
-  name: string;
-  icon: string;
-  children?: TreeNode[];
-}
-
-interface FlatNode {
-  expandable: boolean;
-  name: string;
-  icon: string;
-  level: number;
-}
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
 })
-export class SidenavComponent implements OnInit {
-  @Input() dataSource!: MatTreeFlatDataSource<TreeNode, FlatNode>;
-  @Input() treeControl!: FlatTreeControl<FlatNode>;
-  @Input() isOpened!: boolean;
-  @Input() drawer?: MatDrawer;
+export class SidenavbarComponent {
+  @ViewChild('drawer') drawer!: MatSidenav;
+  isExpanded: boolean = false;
 
-  @Output() openCustomersTable = new EventEmitter<void>();
-
-  constructor(private router: Router) {} // Inject the Router service
+  constructor(private router: Router) {}
 
   onCustomersClick(): void {
     // Navigate to the CustomerComponent when clicking on "Customers" link
     this.router.navigate(['/customers']);
   }
 
-  selectedMenu: string = '';
-  hasChild = (_: number, node: FlatNode) => node.expandable;
+  onFormClick(): void {
+    // Navigate to the FormComponent when clicking on "Form" link
+    this.router.navigate(['/form']);
+  }
 
-  menuClicked(node: FlatNode): void {
-    if (this.selectedMenu === node.name) {
-      this.selectedMenu = '';
+  onAnalyticsClick(): void {
+    // Navigate to the FormComponent when clicking on "Form" link
+    this.router.navigate(['/analytics']);
+  }
+
+  toggleSidenav(): void {
+    this.isExpanded = !this.isExpanded;
+    if (this.isExpanded) {
+      this.drawer.open();
     } else {
-      this.selectedMenu = node.name;
+      this.drawer.close();
     }
   }
-
-  ngOnInit() {
-    // Initialize anything required during component initialization.
-  }
 }
+
+
+
+

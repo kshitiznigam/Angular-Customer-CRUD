@@ -15,26 +15,46 @@ import {NgIf} from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatInputModule } from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatNativeDateModule} from '@angular/material/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { SidenavbarComponent } from './sidenav/sidenav.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerDialogComponent } from './customer-dialog/customer-dialog.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormComponentComponent } from './form-component/form-component.component';
+import { TokenInterceptor } from './interceptors/token-interceptor';
+import { CustomerAnalyticsComponent } from './customer-analytics/customer-analytics.component';
+import { LoginComponent } from './login/login.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 
 
 @NgModule({
   
   declarations: [
     AppComponent,
-    SidenavComponent,
+    SidenavbarComponent,
     CustomerComponent,
     CustomerDialogComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    FormComponentComponent,
+    CustomerAnalyticsComponent,
+    LoginComponent,
+    ToolbarComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -55,10 +75,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgIf,
     MatDatepickerModule,
     FlexLayoutModule,
-    NgbModule
+    NgbModule,
+    MatSnackBarModule,
+    MatNativeDateModule,
+    HttpClientModule,
+    MatCardModule,
+    NgApexchartsModule,
+    MatToolbarModule
+  
+    
+   
 
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

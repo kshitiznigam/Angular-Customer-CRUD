@@ -1,3 +1,4 @@
+/* Style the toolbar */
 /* Add styles for the table */
 .mat-table {
   width: 100%;
@@ -6,9 +7,14 @@
 
   /* Style the table header */
   .mat-header-row {
-    background-color: #f57c00; /* Orange color */
+    background-color: #f57c00;
     color: white;
     font-weight: bold;
+
+    /* Style the edit and delete buttons */
+    .mat-icon-button {
+      color: #f57c00;
+    }
   }
 
   .mat-cell,
@@ -17,15 +23,10 @@
     text-align: left;
     border-bottom: 1px solid #ddd;
 
-    /* Style the edit and delete buttons */
-    .mat-icon-button {
-      color: #f57c00;
+    /* Style the checkboxes */
+    .mat-checkbox {
+      margin-right: 8px;
     }
-  }
-
-  /* Style the checkboxes */
-  .mat-checkbox {
-    margin-right: 8px;
   }
 
   /* Style the rows on hover */
@@ -37,21 +38,90 @@
 /* Style the Add and Delete buttons */
 .button-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 10px;
+
+  /* Search Box Styles */
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align to the right */
+  // margin-top: 18px;
+  margin-right: 10px; /* Add some right margin to create space between the search box and table */
+ 
+
+
+  /* Style the input and search icon */
+  input {
+    margin-right: 2px;
+  }
+}
 
   /* Style the Add button */
   .add-button {
-    background-color: #f57c00;
+    background-color: #1369f4;
     color: white;
     font-weight: bold;
+    margin-left: 10px;
+
+    &:hover {
+      transform: scale(1.20);
+    }
   }
 
   /* Style the Delete button */
   .delete-button {
-    background-color: #f44336;
+    background-color: #1369f4;
     color: white;
     font-weight: bold;
+    margin-left: 10px;
+
+    &:hover {
+      transform: scale(1.20);
+    }
+  }
+  .template-button {
+    background-color: #1369f4;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+
+    &:hover {
+      transform: scale(1.20);
+    }
+  }
+
+  .upload-button {
+    background-color: #1369f4;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+
+    &:hover {
+      transform: scale(1.20);
+    }
+  }
+
+  .update-button {
+    background-color: #1369f4;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+
+    &:hover {
+      transform: scale(1.20);
+    }
+  }
+
+  .save-button {
+    background-color: #1369f4;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+
+    &:hover {
+      transform: scale(1.20);
+    }
   }
 }
 
@@ -65,3 +135,55 @@
 .main-content {
   padding: 16px;
 }
+
+
+
+/* Adjust the position of the buttons and search box container */
+.button-container,
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+// /* Add styles for the cards */
+// .card-container {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 20px;
+//   margin-left: 100px;
+
+//   .card {
+//     width: calc(20% - 5px);
+//     padding: 5px;
+//     border: 1px solid #0f0101;
+//     border-radius: 8px;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//     transition: transform 0.3s ease-in-out;
+
+//     &:hover {
+//       transform: scale(1.20);
+//     }
+
+//     h2 {
+//       align-items: center;
+//       margin-bottom: 5px;
+//       color: #0c0c0cfe;
+//       font-size: 18px;
+//       font-weight: bold;
+//     }
+
+//     p {
+//       color: #0d0b0b;
+//     }
+
+//     /* Styles for Users Card */
+//     &.users-card {
+//       background-color: #abb3a3;
+//     }
+
+//     /* Styles for Roles Card */
+//     &.roles-card {
+//       background-color: #cca470;
+//     }
+//   }
+// }
