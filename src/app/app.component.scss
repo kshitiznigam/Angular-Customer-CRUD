@@ -1,0 +1,40 @@
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  
+  .mat-drawer-content {
+    margin-left: 40px !important
+  }
+  
+  .mat-drawer:not(.mat-drawer-side) {
+    box-shadow: none !important;
+  }
+  
+  .drawer {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    transition: 0.5s;
+  }
+  
+  .drawer:hover {
+    transition: out 20s ease 30s !important;
+  }
+  
+  .content {
+    height: calc(100vh - 70px);
+    overflow: auto;
+    margin: 0px 0px 19px 14px !important;
+  }
+  .load{
+   color: white;
+   font-family: "Gilroy-Bold";
+  }

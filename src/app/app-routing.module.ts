@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {  path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent }, // Redirect to /customers by default
-  { path: 'customers', component: CustomerComponent }, // Customers route
+  { path: 'customers', component: CustomerComponent}, // Customers route
   { path: 'form', component: FormComponentComponent }, // Add the route for the Form Component
   { path: 'analytics', component:CustomerAnalyticsComponent}
 ];

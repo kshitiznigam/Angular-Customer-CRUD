@@ -1,0 +1,19 @@
+<div class="sidebar" [ngClass]="{'expanded': isExpanded}" (mouseenter)="expandSidebar()" (mouseleave)="collapseSidebar()">
+    <img src="assets/Olam-Agri-logo.png" alt="Logo" class="logo">
+    <ul class="sidebar-links">
+        <li><a routerLink="/customers">
+         <mat-icon>account_circle</mat-icon>
+         <span *ngIf="isExpanded">Customer</span>
+       </a></li>
+        <li><a routerLink="/form">
+            <mat-icon>create</mat-icon>
+            <span *ngIf="isExpanded">Form</span>
+          </a></li>
+        <li><a routerLink="/analytics">
+            <mat-icon>bar_chart</mat-icon>
+            <span *ngIf="isExpanded">Analytics</span>
+          </a></li>
+        </ul>
+
+  </div>
+  

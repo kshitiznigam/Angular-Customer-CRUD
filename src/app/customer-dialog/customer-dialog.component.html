@@ -1,4 +1,6 @@
-<h2 mat-dialog-title>{{ isEditMode ? 'Add Customer' : 'Add Customer' }}</h2>
+<h2>
+  <div class="dialog-header">{{ isEditMode ? 'Edit Customer' : 'Add Customer' }}</div>
+</h2>
 <div mat-dialog-content fxLayout="column" fxLayoutGap="10px">
   <form [formGroup]="customerForm" *ngIf="customerForm" fxLayout="column">
     <div fxLayout="row" fxLayoutGap="10px">
@@ -24,7 +26,7 @@
       <mat-form-field fxFlex="49">
         <mat-label>Contact No</mat-label>
         <input matInput formControlName="contactNo" required placeholder="Number">
-        <!-- Display the required and minLength validation messages -->
+        
         <mat-error *ngIf="customerForm.get('contactNo')?.invalid && customerForm.get('contactNo')?.touched">
           <span *ngIf="customerForm.get('contactNo')?.errors?.['required']">Contact No is required</span>
           <span *ngIf="customerForm.get('contactNo')?.errors?.['minlength']">Contact No must be at least 10 digits</span>
@@ -36,16 +38,17 @@
         <input matInput [matDatepicker]="dp3" disabled>
         <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
         <mat-datepicker #dp3 disabled="false"></mat-datepicker>
-        <!-- Display the required validation message -->
+        
         <mat-error *ngIf="customerForm.get('lastOrderDate')?.invalid && (customerForm.get('lastOrderDate')?.dirty || customerForm.get('lastOrderDate')?.touched)">
           Last Order Date is required
         </mat-error>
       </mat-form-field>
     </div>
-
+  </form>
+</div>
 <div mat-dialog-actions fxLayoutGap="10px">
   <button mat-button (click)="onCancelClick()">Cancel</button>
   <button mat-button color="primary" [disabled]="!customerForm.valid" (click)="onFormSubmit()">
-    {{ isEditMode ? 'Save Changes' : 'Add' }}
+    {{ isEditMode ? 'Save' : 'Add' }}
   </button>
 </div>

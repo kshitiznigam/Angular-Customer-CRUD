@@ -1,68 +1,104 @@
+
+
 /* Styling for the toolbar */
 .toolbar {
-    display: flex;
-    width: 100%;
-    height: 20%;
-    flex-direction: column;
-    background-color: #e36115d2; /* Orange color for the first layer */
-    color: white;
-    margin-bottom: 30px;
-    // margin-left: 50px;
-    // margin-right: 50px;
-    // padding: 5px;
-  }
-  
-  /* Styling for the top layer */
-  .top-layer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .admin {
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-  
+  display: flex;
+  width: 100%;
+  height: 100px;
+  // position: fixed; /* Fix the toolbar to the top */
+  top: 0;
+  left: 0;
+  z-index: 100;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #ff8a44, #e36115d2);
+  color: white;
+  margin-bottom: 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 50px;
+  // border-radius: 8px;
+}
+
+/* Styling for the top layer */
+.top-layer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.admin {
+  font-size: 15px;
+  font-weight: bold;
+}
+
   .logout-button {
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
-    margin-right: 80px;
     font-weight: bold;
-    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+    margin-right: 5px;
   }
-  
- 
-  /* Styling for the bottom layer (tabs) */
-  .bottom-layer {
-    display: flex;
-    margin-top: 20px;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent tabs from wrapping */
-    padding-top: 10px;
-    background-color: #f1f7f3ea; /* Silver grey color for the bottom layer */
-  }
-  
-  .tab {
-    padding: 8px 12px;
-    font-size: 16px;
-    color: black;
-    cursor: pointer;
-    border-bottom: 6px;
-    transition: border-color 0.3s ease-in-out;
-  }
-  
-  .tab:hover {
-    border-color: white; /* Highlight on hover */
-  }
-  
-  /* Add spacing between the tabs */
-  .tab + .tab {
-    margin-left: 10px;
-  }
-  
+
+// .logout-button:hover {
+//   color: #ffd700;
+// }
+
+/* Styling for the dropdown arrow */
+.dropdown-arrow {
+  width: 1px;
+  height: 5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white; /* Adjust the size and color as needed */
+  // position: absolute;
+  right: 0;
+  margin-top: 10px;
+  margin-left: 10px; /* Add spacing between the text and the arrow */
+}
+
+/* Styling for the bottom layer (tabs) */
+.bottom-layer {
+  // display: flex;
+  align-items: center;
+  overflow-x: auto;
+  background-color: rgba(234, 237, 240, 0.995); /* Dark background color for the bottom layer */
+  padding: 10px 20px;
+  // border-radius: 0 0 8px 8px;
+}
+
+.tab {
+  position: relative; /* Needed for the absolute positioning of the indicator */
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 16px;
+  color: rgb(16, 16, 16);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+// .tab:hover {
+//   background-color: #e4a4a4; /* Slight background change on hover */
+// }
+
+/* Add spacing between the tabs */
+.tab + .tab {
+  margin-left: 12px;
+}
+
+/* Styling for the active tab */
+.tab.active {
+  color: #ff8a44; /* Orange text color for active tab */
+}
+
+/* Styling for the orange line under active tab */
+.active-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff8a44; /* Orange line color for active tab */
+}

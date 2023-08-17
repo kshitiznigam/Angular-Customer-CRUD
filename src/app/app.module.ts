@@ -6,7 +6,6 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +20,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { MatDialogModule } from '@angular/material/dialog'; 
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -29,7 +29,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavbarComponent } from './sidenav/sidenav.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerDialogComponent } from './customer-dialog/customer-dialog.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
@@ -39,6 +38,11 @@ import { TokenInterceptor } from './interceptors/token-interceptor';
 import { CustomerAnalyticsComponent } from './customer-analytics/customer-analytics.component';
 import { LoginComponent } from './login/login.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+
+
+
+
 
 
 
@@ -46,14 +50,19 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   
   declarations: [
     AppComponent,
-    SidenavbarComponent,
     CustomerComponent,
     CustomerDialogComponent,
     ConfirmationDialogComponent,
     FormComponentComponent,
     CustomerAnalyticsComponent,
     LoginComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SidebarComponent,
+   
+   
+    
+    
+    
     
   ],
   imports: [
@@ -81,7 +90,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     HttpClientModule,
     MatCardModule,
     NgApexchartsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule,
+    MatPaginatorModule
   
     
    

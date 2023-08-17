@@ -1,42 +1,30 @@
 import { Component } from '@angular/core';
-import { MatDrawer } from '@angular/material/sidenav';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { AuthService } from './services/auth.service';
 
-interface SidenavItem {
-  name: string;
-  icon: string;
-  link?: string;
-}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-  
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(200, style({ opacity: 1 }))
+      ]),
+      transition('* => void', [
+        animate(200, style({ opacity: 0 }))
+      ])
+    ])
+  ],
 })
-export class AppComponent {
-isExpanded: boolean=false;
-  title: any;
-onMouseEnter() {
-throw new Error('Method not implemented.');
-}
-onMouseLeave() {
-throw new Error('Method not implemented.');
-}
-  isOpened: boolean = false;
 
-  sidenavItems: SidenavItem[] = [
-    {
-      name: 'Customer',
-      icon: 'person',
-      link: '/customer'
-    },
-    
-    {
-      name: 'Form',
-      icon: 'description',
-      link: '/form-component'
-    },
-    
-    
-  ];
+export class AppComponent {
+  title = 'WEB';
+  isOpened=false;
+  sidebarVisible1=false;
+  constructor(private authGaurd:AuthService) {
+  
+}
 }

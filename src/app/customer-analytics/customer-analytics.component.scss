@@ -1,10 +1,15 @@
+.container {
+  display: flex; /* Display the sidebar and chart container side by side */
+}
+
 .chart-container {
+  flex-grow: 1; /* Allow the chart container to take up remaining space */
   display: flex;
   justify-content: space-between;
 
   .pie-chart,
   .bar-chart {
-    width: 48%; /* Adjust the width as needed */
+    flex: 1; /* Equal width for both charts */
     padding: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;

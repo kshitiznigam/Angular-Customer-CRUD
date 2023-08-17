@@ -1,4 +1,26 @@
-/* Add any global styles you need here */
+
+/* Apply border-radius to the dialog content */
+.mat-dialog-content {
+  border-radius: 0 0 8px 8px; /* Apply curvy edges to the bottom corners */
+}
+
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff8a44; /* Orange background color for the header */
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+
+/* Styling for the header text */
+.header-text {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
 
 /* Styling for the customer form */
 mat-form-field {
@@ -66,6 +88,8 @@ h2.mat-dialog-title {
 /* Apply responsive styling to form rows on smaller screens */
 @media (max-width: 768px) {
   .form-row {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
+
+

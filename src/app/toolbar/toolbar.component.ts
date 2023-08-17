@@ -7,6 +7,13 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+  router: any;
+
+  activeTab: string = ''; // Initialize with no active tab
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
 
   constructor(private authService: AuthService) { }
 
@@ -15,5 +22,6 @@ export class ToolbarComponent implements OnInit {
 
   logout(): void {
     this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

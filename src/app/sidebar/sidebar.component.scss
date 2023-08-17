@@ -1,0 +1,41 @@
+.sidebar {
+    // width: 60px; /* Initial width of the sidebar */f7000
+    height: 700px; /* Adjust the height as needed */
+    background-color: rgba(234, 237, 240, 0.995); 
+    transition: width 0.3s ease-in-out; /* Smooth transition effect */
+    // overflow-x: hidden; /* Hide overflowing content */
+  }
+  
+  .sidebar.expanded {
+    width: 160px; /* Expanded width of the sidebar */
+  }
+  
+  .logo {
+    width: 35px; /* Adjust the width to make the logo smaller */
+    height: auto; /* Automatically adjust the height while maintaining aspect ratio */
+    margin: 10px; /* Add some margin around the logo */
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 2px;
+    margin-top: 20px;
+  }
+  
+  .sidebar-links li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-links a {
+    display: block;
+    padding: 5px 10px;
+    color: rgb(15, 14, 14);
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  

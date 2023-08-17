@@ -1,24 +1,55 @@
+
+<div class="toolbar-container">
 <div class="toolbar">
     <div class="top-layer">
       <div class="admin">
-        Admin
+        Master
       </div>
-      <button class="logout-button">
-        Logout
+      <button class="logout-button" (click)="logout()">
+        Logout <span class="dropdown-arrow"></span>
       </button>
+      
     </div>
     <div class="bottom-layer">
       <div class="scroll-indicator left"></div>
-      <div class="tab">Storage Location Master</div>
-      <div class="tab">Currency Master</div>
-      <div class="tab">UOM Master</div>
-      <div class="tab">Incoterms Master</div>
-      <div class="tab">Payment Master</div>
-      <div class="tab">Tax Master</div>
-      <div class="tab">Vendor Master</div>
-      <div class="tab">Product Master</div>
-      <div class="tab">Customer Master</div>
-      <div class="scroll-indicator right"></div>
+    <div class="tab" [ngClass]="{'active': activeTab === 'Storage Location Master'}" (click)="setActiveTab('Storage Location Master')">
+      Storage Location Master
+      <div class="active-indicator" *ngIf="activeTab === 'Storage Location Master'"></div>
     </div>
+      <div class="tab" [ngClass]="{'active': activeTab == 'Currency Master'}" (click)="setActiveTab('Currency Master')">
+        Currency Master
+        <div class="active-indicator" *ngIf="activeTab == 'Currency Master'"></div>
+      </div>
+      <div class="tab" [ngClass]="{'active': activeTab == 'UOM Master'}" (click)="setActiveTab('UOM Master')">
+        UOM Master
+        <div class="active-indicator" *ngIf="activeTab == 'UOM Master'"></div>
+      </div>
+      <div class="tab" [ngClass]="{'active': activeTab == 'Incoterms Master'}" (click)="setActiveTab('Incoterms Master')">
+        Incoterms Master
+        <div class="active-indicator" *ngIf="activeTab == 'Incoterms Master'"></div>
+      </div>
+      <div class="tab" [ngClass]="{'active': activeTab == 'Payment Master'}" (click)="setActiveTab('Payment Master')">
+        Payment Master
+        <div class="active-indicator" *ngIf="activeTab == 'Payment Master'"></div>
+      </div>
+      <div class="tab" [ngClass]="{'active': activeTab == 'Tax Master'}" (click)="setActiveTab('Tax Master')">
+        Tax Master
+        <div class="active-indicator" *ngIf="activeTab == 'Tax Master'"></div>
+      </div>
+      <div class="tab" [ngClass]="{'active': activeTab == 'Terms Master'}" (click)="setActiveTab('Terms Master')">
+        Terms Master
+        <div class="active-indicator" *ngIf="activeTab == 'Terms Master'"></div>
+      </div>
+      <!-- <div class="tab" [ngClass]="{'active': activeTab == 'Customer Master'}" (click)="setActiveTab('Customer Master')">
+        Customer Master 
+        <div class="active-indicator" *ngIf="activeTab == 'Customer Master'"></div>
+      </div>
+      <div class="tab" [ngClass]="{'active': activeTab == 'Vendor Master'}" (click)="setActiveTab('Vendor Master')">
+        Vendor Master
+        <div class="active-indicator" *ngIf="activeTab == 'Vendor Master'"></div>
+      </div> -->
+    
+    </div>
+  </div>
   </div>
   

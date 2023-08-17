@@ -1,3 +1,5 @@
+
+
 /* Style the toolbar */
 /* Add styles for the table */
 .mat-table {
@@ -39,23 +41,47 @@
 .button-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  margin-top: 12px;
 
-  /* Search Box Styles */
+ /* Search Box Styles */
 .search-box {
   display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Align to the right */
-  // margin-top: 18px;
-  margin-right: 10px; /* Add some right margin to create space between the search box and table */
- 
+  align-items: left;
+  margin-right: 10px; /* Add some right margin to create space between the search box and other elements */
 
-
-  /* Style the input and search icon */
-  input {
-    margin-right: 2px;
-  }
 }
+
+.input-container {
+  position: relative;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  background-color: silver; /* Silvery background color */
+  border-radius: 4px;
+  flex: 1; /* Allow the input to take up remaining space */
+}
+
+/* Styling for the input */
+input {
+  border: none;
+  background-color: transparent; /* Make the input background transparent */
+  padding: 8px; /* Add some padding to match the icon's size */
+  border-radius: 4px;
+  outline: none; /* Remove the default focus outline */
+  width: 100%; /* Occupy all available space */
+}
+
+/* Styling for the search icon */
+.search-icon {
+  position: absolute;
+  right: 10px; /* Adjust the position as needed */
+  font-size: 20px; /* Adjust the font size as needed */
+  color: gray; /* Icon color */
+  pointer-events: none; /* Let clicks and hover events pass through the icon */
+}
+
+
 
   /* Style the Add button */
   .add-button {
@@ -64,9 +90,9 @@
     font-weight: bold;
     margin-left: 10px;
 
-    &:hover {
-      transform: scale(1.20);
-    }
+    // &:hover {
+    //   transform: scale(1.20);
+    // }
   }
 
   /* Style the Delete button */
@@ -76,9 +102,10 @@
     font-weight: bold;
     margin-left: 10px;
 
-    &:hover {
-      transform: scale(1.20);
-    }
+    // &:hover {
+    //   transform: scale(1.20);
+    // }
+
   }
   .template-button {
     background-color: #1369f4;
@@ -86,9 +113,9 @@
     font-weight: bold;
     margin-left: 10px;
 
-    &:hover {
-      transform: scale(1.20);
-    }
+    // &:hover {
+    //   transform: scale(1.20);
+    // }
   }
 
   .upload-button {
@@ -97,9 +124,9 @@
     font-weight: bold;
     margin-left: 10px;
 
-    &:hover {
-      transform: scale(1.20);
-    }
+    // &:hover {
+    //   transform: scale(1.20);
+    // }
   }
 
   .update-button {
@@ -108,27 +135,36 @@
     font-weight: bold;
     margin-left: 10px;
 
-    &:hover {
-      transform: scale(1.20);
-    }
+    // &:hover {
+    //   transform: scale(1.20);
+    // }
   }
 
   .save-button {
     background-color: #1369f4;
     color: white;
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 10px;  
 
-    &:hover {
-      transform: scale(1.20);
-    }
+    // &:hover {
+    //   transform: scale(1.20);
+    // }
   }
 }
 
+/* Add a new container to hold the sidebar and customer table */
+.container {
+  display: flex;
+}
+
+
 /* Adjust the position of the table */
 .table-container {
+  flex-grow: 1;
   margin-top: 16px;
-  margin-left: 80px; /* Adjust the left margin to align with the sidenav bar */
+  margin-left: 25px;
+  z-index: 0;
+  // margin-left: 80px; /* Adjust the left margin to align with the sidenav bar */
 }
 
 /* Add a bit of padding to the main content area */
@@ -187,3 +223,9 @@
 //     }
 //   }
 // }
+
+
+.table-scroll-container {
+  flex-grow: 1; /* Allow the container to grow within its parent */
+  overflow: auto; /* Enable scrollbars if the content overflows */
+}

@@ -1,12 +1,13 @@
+   
+   <div class="container">
+   
+   <app-sidebar></app-sidebar>
+ 
 
-
-
-
-<!-- Include the Toolbar Component -->
-<app-toolbar></app-toolbar>
-<!-- <app-sidenav></app-sidenav> -->
 <!-- Main Content Area -->
 <div class="main-container">
+  <!-- Include the Toolbar Component -->
+<app-toolbar></app-toolbar>
   <div class="toolbar-space"></div>
   <!-- <div class="card-container">
     <mat-card class="card users-card">
@@ -30,16 +31,18 @@
 <div class="button-container">
 
   
-  <div class="search-box"> 
-    <mat-icon class="search-icon">search</mat-icon>
-    <input matInput placeholder="Search..." />
+  <div class="search-box">
+    <div class="input-container">
+      <input matInput placeholder="Search Items" />
+      <mat-icon class="search-icon">search</mat-icon>
+    </div>
   </div>
   <button mat-raised-button color="primary" class="add-button" (click)="onAddCustomerClick()">
     <mat-icon class="button-icon">add</mat-icon>
     Add Customer
   </button>
   
-  <button mat-raised-button color="primary" class="template-button">
+  <button mat-raised-button color="primary" class="template-button ">
     <mat-icon class="button-icon">get_app</mat-icon>
     Template
   </button>
@@ -67,6 +70,7 @@
 
 
   <div class="table-container flex-grow-1">
+    <div class="table-scroll-container">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover">
 
       <!-- Customer ID Column -->
@@ -116,10 +120,18 @@
           <mat-checkbox (click)="$event.stopPropagation()" (change)="toggleCustomerSelection(customer)"></mat-checkbox>
         </td>
       </ng-container>
+      
 
       <!-- Table header and row definitions -->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
     </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+  
   </div>
 </div>
+
+
+  

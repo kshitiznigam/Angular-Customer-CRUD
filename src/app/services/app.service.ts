@@ -29,8 +29,8 @@ export class ApiService {
     return this.http.delete<void>(`${this.apiUrl}/customers/${customerId}`);
   }
 
-
-  submitFormData(formData: any): Observable<any> {
+  submitFormData(formData: any, headers: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/submit`, formData);
+    
   }
 }
