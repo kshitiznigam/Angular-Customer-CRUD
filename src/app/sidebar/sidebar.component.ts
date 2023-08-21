@@ -21,6 +21,10 @@ export class SidebarComponent {
   navigateToAnalyticsComponent(){
     this.router.navigate(['/analytics']);
   }
+
+  navigateToCardsComponent(){
+    this.router.navigate(['/cards']);
+  }
   
 
   expandSidebar() {

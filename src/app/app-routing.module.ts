@@ -4,6 +4,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { FormComponentComponent } from './form-component/form-component.component';
 import { CustomerAnalyticsComponent } from './customer-analytics/customer-analytics.component';
 import { LoginComponent } from './login/login.component';
+import { GameCardComponent } from './game-card/game-card.component';
 
 
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, // Redirect to /customers by default
   { path: 'customers', component: CustomerComponent}, // Customers route
   { path: 'form', component: FormComponentComponent }, // Add the route for the Form Component
-  { path: 'analytics', component:CustomerAnalyticsComponent}
+  { path: 'analytics', component:CustomerAnalyticsComponent},
+  {path: 'cards', component:GameCardComponent}
 ];
 
 

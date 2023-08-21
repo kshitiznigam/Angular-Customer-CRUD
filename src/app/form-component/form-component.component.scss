@@ -1,4 +1,46 @@
 /* form-component.component.scss */
+// /* Add styles for the cards */
+// .card-container {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 20px;
+//   margin-left: 100px;
+
+//   .card {
+//     width: calc(20% - 5px);
+//     padding: 5px;
+//     border: 1px solid #0f0101;
+//     border-radius: 8px;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//     transition: transform 0.3s ease-in-out;
+
+//     &:hover {
+//       transform: scale(1.20);
+//     }
+
+//     h2 {
+//       align-items: center;
+//       margin-bottom: 5px;
+//       color: #0c0c0cfe;
+//       font-size: 18px;
+//       font-weight: bold;
+//     }
+
+//     p {
+//       color: #0d0b0b;
+//     }
+
+//     /* Styles for Users Card */
+//     &.users-card {
+//       background-color: #abb3a3;
+//     }
+
+//     /* Styles for Roles Card */
+//     &.roles-card {
+//       background-color: #cca470;
+//     }
+//   }
+// }
 
 .container {
   display: flex; /* Display the sidebar and form container side by side */

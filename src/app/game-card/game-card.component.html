@@ -1,0 +1,18 @@
+
+<div class="container">
+    <div class="card-row">
+      <div class="card" *ngFor="let card of cards" (click)="cardClicked(card)" [@cardFlip]="card.state">
+        <div class="face back">
+          <img src="assets/specialty-grains-and-seeds-tile.jpg" />
+        </div>
+        <div class="face front">
+          <img src="assets/grains.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+     
+    
+ 
+  

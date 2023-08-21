@@ -39,6 +39,7 @@ import { CustomerAnalyticsComponent } from './customer-analytics/customer-analyt
 import { LoginComponent } from './login/login.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { GameCardComponent } from './game-card/game-card.component';
 
 
 
@@ -58,6 +59,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     LoginComponent,
     ToolbarComponent,
     SidebarComponent,
+    GameCardComponent,
    
    
     
