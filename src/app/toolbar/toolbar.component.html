@@ -1,6 +1,6 @@
-
 <div class="toolbar-container">
 <div class="toolbar">
+  
     <div class="top-layer">
       <div class="admin">
         Master
@@ -11,6 +11,7 @@
       
     </div>
     <div class="bottom-layer">
+      
       <div class="scroll-indicator left"></div>
     <div class="tab" [ngClass]="{'active': activeTab === 'Storage Location Master'}" (click)="setActiveTab('Storage Location Master')">
       Storage Location Master
@@ -40,15 +41,6 @@
         Terms Master
         <div class="active-indicator" *ngIf="activeTab == 'Terms Master'"></div>
       </div>
-      <!-- <div class="tab" [ngClass]="{'active': activeTab == 'Customer Master'}" (click)="setActiveTab('Customer Master')">
-        Customer Master 
-        <div class="active-indicator" *ngIf="activeTab == 'Customer Master'"></div>
-      </div>
-      <div class="tab" [ngClass]="{'active': activeTab == 'Vendor Master'}" (click)="setActiveTab('Vendor Master')">
-        Vendor Master
-        <div class="active-indicator" *ngIf="activeTab == 'Vendor Master'"></div>
-      </div> -->
-    
     </div>
   </div>
   </div>

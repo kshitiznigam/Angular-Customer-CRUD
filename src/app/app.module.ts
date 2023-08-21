@@ -47,6 +47,8 @@ import { GameCardComponent } from './game-card/game-card.component';
 
 
 
+
+
 @NgModule({
   
   declarations: [
@@ -60,6 +62,8 @@ import { GameCardComponent } from './game-card/game-card.component';
     ToolbarComponent,
     SidebarComponent,
     GameCardComponent,
+    
+ 
    
    
     

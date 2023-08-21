@@ -7,6 +7,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+  
   router: any;
 
   activeTab: string = ''; // Initialize with no active tab
@@ -14,6 +15,7 @@ export class ToolbarComponent implements OnInit {
   setActiveTab(tab: string) {
     this.activeTab = tab;
   }
+
 
   constructor(private authService: AuthService) { }
 

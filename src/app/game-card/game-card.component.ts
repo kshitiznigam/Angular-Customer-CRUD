@@ -27,6 +27,7 @@ export interface CardData {
     ])
   ]
 })
+
 export class GameCardComponent implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -36,6 +37,7 @@ export class GameCardComponent implements OnInit {
     { imageId: "anotherId", state: "default" },
     { imageId: "anotherId", state: "default" },
     { imageId: "anotherId", state: "default" },
+    { imageId: "anotherId", state: "default"}
     // ... Repeat for other cards
   ];
 
