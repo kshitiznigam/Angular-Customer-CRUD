@@ -6,6 +6,7 @@ import { CustomerAnalyticsComponent } from './customer-analytics/customer-analyt
 import { LoginComponent } from './login/login.component';
 import { GameCardComponent } from './game-card/game-card.component';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'form', component: FormComponentComponent }, // Add the route for the Form Component
   { path: 'analytics', component:CustomerAnalyticsComponent},
   {path: 'cards', component:GameCardComponent},
-  {path: 'home', component:HomeComponent}
+  {path: 'home', component:HomeComponent},
+  {path: 'signup', component:SignupComponent}
 ];
 
 

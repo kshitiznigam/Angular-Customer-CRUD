@@ -44,6 +44,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BodyVideoComponent } from './body-video/body-video.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -70,6 +71,7 @@ import { HomeComponent } from './home/home.component';
     BodyVideoComponent,
     FooterComponent,
     HomeComponent,
+    SignupComponent,
     
  
    
