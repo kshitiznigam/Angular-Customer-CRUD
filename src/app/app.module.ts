@@ -40,6 +40,10 @@ import { LoginComponent } from './login/login.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { GameCardComponent } from './game-card/game-card.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BodyVideoComponent } from './body-video/body-video.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -62,6 +66,10 @@ import { GameCardComponent } from './game-card/game-card.component';
     ToolbarComponent,
     SidebarComponent,
     GameCardComponent,
+    NavbarComponent,
+    BodyVideoComponent,
+    FooterComponent,
+    HomeComponent,
     
  
    

@@ -1,4 +1,4 @@
-$primary-color: #3498db;
+$primary-color: #ff8a44;
 $background-color: #f2f2f2;
 
 .login-container {
@@ -22,15 +22,16 @@ $background-color: #f2f2f2;
     }
 
     input {
-      width: 100%;
+      width: 85%;
       padding: 10px;
+      // margin-right: 10px;
       margin: 5px 0;
-      border: 1px solid #ccc;
+      border: 1px solid #ff8a44;
       border-radius: 4px;
       transition: border-color 0.3s;
       
       &:focus {
-        border-color: $primary-color;
+        border-color: #ff8a44;
       }
     }
 
