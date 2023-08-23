@@ -36,11 +36,16 @@ export class CustomerComponent implements OnInit {
   constructor(public dialog: MatDialog, private apiService: ApiService) {}
 
   ngOnInit(): void {
-    const storedDataJson = localStorage.getItem('custData');
-    if (storedDataJson) {
-      this.dataSource = JSON.parse(storedDataJson);
-    }
-
+    this.apiService.getCustomers().subscribe(
+      (customers) => {
+        this.dataSource = customers;
+        // Save the fetched data to local storage
+        // localStorage.setItem('custData', JSON.stringify(this.dataSource));
+      },
+      (error) => {
+        console.error('Failed to fetch customers:', error);
+      }
+    );
   }
 
   onAddCustomerClick() {
@@ -57,7 +62,7 @@ export class CustomerComponent implements OnInit {
           this.dataSource.push(customer);
           this.dataSource = [...this.dataSource]; // Refresh the data source to trigger change detection
   
-          localStorage.setItem('custData', JSON.stringify(this.dataSource));
+          // localStorage.setItem('custData', JSON.stringify(this.dataSource));
         });
       }
     });
@@ -112,7 +117,7 @@ export class CustomerComponent implements OnInit {
         this.dataSource = this.dataSource.filter((customer) => customer.customerId !== customerId);
         this.selection.clear();
 
-        localStorage.setItem('custData', JSON.stringify(this.dataSource));
+        // localStorage.setItem('custData', JSON.stringify(this.dataSource));
       
         
       }, (error) => {
@@ -128,7 +133,7 @@ export class CustomerComponent implements OnInit {
       this.dataSource[existingCustomerIndex] = customer;
       this.dataSource = [...this.dataSource];
 
-      localStorage.setItem('custData', JSON.stringify(this.dataSource));
+      // localStorage.setItem('custData', JSON.stringify(this.dataSource));
       
     }
   }
